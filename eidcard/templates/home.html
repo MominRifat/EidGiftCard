@@ -3,31 +3,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Eid Card Generator</title>
+    <title>Eid Card</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Eid Mubarak Gift Card Generator</h1>
-
+      <h1 class="h">⏾</h1>
+      <h1 class="h">✨ঈদ মোবারক✨</h1>
       <form id="cardForm" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Enter your name" required />
-        <textarea name="message" placeholder="Enter your message" required></textarea>
-        <input type="file" name="image" accept="image/*" required>
-        <button type="submit">Generate Link</button>
+
+        <label for="name">আপনার নাম লিখুন:</label>
+        <input type="text" name="name" placeholder="নাম" required />
+
+        <label for="message">আপনার বার্তা লিখুন:</label>
+        <textarea name="message" placeholder="বার্তা" required></textarea>
+
+        <label for="image">একটি মজার ছবি আপলোড করুন:</label>
+        <div class="custom-file">
+          <input type="file" name="image" id="image" accept="image/*" required />
+          <label class="file-label" for="image"><span id="file-chosen">ক্লিক করুন বা ব্রাউজ করুন</span></label>
+        </div>
+
+        <button type="submit"><i class="fas fa-share-alt"></i>  শেয়ার করুন</button>
       </form>
 
-      <div id="result"></div>
+<script>
+const fileInput = document.getElementById('image');
+const fileLabel = document.querySelector('.file-label');
 
-      <h2>Live Preview</h2>
-      <div class="card-preview" id="card-preview">
-        <h2 id="preview-name">Your Name</h2>
-        <p id="preview-message">Your message</p>
-        <img id="preview-image" src="" alt="" style="display:none; max-width:200px;" />
+fileInput.addEventListener('change', function() {
+    if (fileInput.files.length > 0) {
+        fileLabel.textContent = fileInput.files[0].name;
+    } else {
+        fileLabel.textContent = "ফাইল নির্বাচন করুন...";
+    }
+});
+</script>
+
+
+    <div id="result"></div>
+    <p class="an">
+      🎉ঈদের আনন্দ ছড়িয়ে দিন সবার কাছে🎉
+    </p>
+    <footer class="footer-sub">
+      <div class="footer-info">
+        <p>
+          © 2026 All Rights Reserved | Developed by
+          <a href="https://mominrifat-production.up.railway.app/" target="_blank">Momin Rifat</a>
+        </p>
       </div>
-    </div>
-
+    </footer>
     <script src="{% static 'js/html2canvas.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
   </body>
