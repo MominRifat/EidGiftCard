@@ -1,0 +1,105 @@
+/* ==========================
+   General Body & Container
+========================== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================
+   Form Inputs
+========================== */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* ==========================
+   Card Preview & Content
+========================== */
+.card-preview,
+.card-content {
+    border: 2px solid #4caf50;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #e0ffe0;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* ==========================
+   Giftbox
+========================== */
+.giftbox {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #4caf50;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* ==========================
+   Card Image Styling
+========================== */
+.card-preview img,
+.card-content img {
+    width: auto;
+    max-width: 90%;
+    max-height: 200px;
+    /* small image */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* ==========================
+   Shareable Link Styling
+========================== */
+#result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0fff0;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+#result a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+#result a:hover {
+    text-decoration: underline;
+}

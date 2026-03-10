@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eid Card</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="giftbox" id="giftbox">🎁 Click to Open 🎁</div>
+
+      <div class="card-content" id="card-content" style="display:none;">
+        <h2>{{ card.name }}</h2>
+        <p>{{ card.message }}</p>
+        <img src="{{ card.image.url }}" id="card-image" />
+        <button id="download-btn">Download as PNG</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+      const giftbox = document.getElementById('giftbox')
+      const cardContent = document.getElementById('card-content')
+      const downloadBtn = document.getElementById('download-btn')
+      
+      giftbox.onclick = function () {
+        giftbox.style.display = 'none'
+        cardContent.style.display = 'block'
+      }
+      
+      downloadBtn.onclick = function () {
+        downloadBtn.style.display = 'none'
+        html2canvas(cardContent).then((canvas) => {
+          const link = document.createElement('a')
+          link.download = 'eid-card.png'
+          link.href = canvas.toDataURL('image/png')
+          link.click()
+          downloadBtn.style.display = 'inline-block'
+        })
+      }
+    </script>
+  </body>
+</html>

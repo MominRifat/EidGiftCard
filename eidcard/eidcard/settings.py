@@ -16,7 +16,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  #  static files
 # SECURITY
 # --------------------------
 SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key')
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'  # set False in production
+DEBUG = True
 ALLOWED_HOSTS = ['*']  # allows all  domains
 
 # --------------------------
@@ -77,8 +77,12 @@ TEMPLATES = [
 # DATABASE
 # --------------------------
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',  # <-- এটা লাগবেই
+        'NAME': BASE_DIR / "db.sqlite3",
+    }
 }
+
 
 # --------------------------
 # PASSWORD VALIDATORS
@@ -109,9 +113,11 @@ USE_TZ = True
 # --------------------------
 # STATIC FILES (CSS, JS, Images)
 # --------------------------
-STATIC_URL = '/static/'  # URL prefix
-STATICFILES_DIRS = [STATIC_DIR]  # development folder
-STATIC_ROOT = STATIC_ROOT  # production folder (collectstatic will copy files here)
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
 
 # --------------------------
 # WHITENOISE CONFIG (optional extra for caching)
