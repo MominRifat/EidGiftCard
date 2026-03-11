@@ -393,18 +393,24 @@ textarea {
     }
 
     .container-2 {
-        transform: scale(0.8);
-        transform-origin: top center;
+        width: 95%;
+        max-width: 450px;
+        height: 450px;
+        margin: 20px auto;
     }
 
     .giftbox {
-        transform: scale(0.85);
-        transform-origin: top center;
+        width: 95%;
+        max-width: 400px;
+        height: 450px;
+        margin: 30px auto;
     }
 
     .card-content {
-        transform: scale(0.85);
-        transform-origin: top center;
+        width: 95%;
+        max-width: 450px;
+        height: 450px;
+        margin: 20px auto;
     }
 
 }
