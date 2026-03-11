@@ -6,6 +6,7 @@
     <title>Eid Card</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
@@ -26,35 +27,33 @@
           <label class="file-label" for="image"><span id="file-chosen">ক্লিক করুন বা ব্রাউজ করুন</span></label>
         </div>
 
-        <button type="submit"><i class="fas fa-share-alt"></i>  শেয়ার করুন</button>
+        <button type="submit"><i class="fas fa-share-alt"></i> শেয়ার করুন</button>
       </form>
 
-<script>
-const fileInput = document.getElementById('image');
-const fileLabel = document.querySelector('.file-label');
+      <script>
+        const fileInput = document.getElementById('image')
+        const fileLabel = document.querySelector('.file-label')
+        
+        fileInput.addEventListener('change', function () {
+          if (fileInput.files.length > 0) {
+            fileLabel.textContent = fileInput.files[0].name
+          } else {
+            fileLabel.textContent = 'ফাইল নির্বাচন করুন...'
+          }
+        })
+      </script>
 
-fileInput.addEventListener('change', function() {
-    if (fileInput.files.length > 0) {
-        fileLabel.textContent = fileInput.files[0].name;
-    } else {
-        fileLabel.textContent = "ফাইল নির্বাচন করুন...";
-    }
-});
-</script>
-
-
-    <div id="result"></div>
-    <p class="an">
-      🎉ঈদের আনন্দ ছড়িয়ে দিন সবার কাছে🎉
-    </p>
-    <footer class="footer-sub">
-      <div class="footer-info">
-        <p>
-          © 2026 All Rights Reserved | Developed by
-          <a href="https://mominrifat-production.up.railway.app/" target="_blank">Momin Rifat</a>
-        </p>
-      </div>
-    </footer>
+      <div id="result"></div>
+      <p class="an">🎉ঈদের আনন্দ ছড়িয়ে দিন সবার কাছে🎉</p>
+      <footer class="footer-sub">
+        <div class="footer-info">
+          <p>
+            © 2026 All Rights Reserved | Developed by
+            <a href="https://mominrifat-production.up.railway.app/" target="_blank">Momin Rifat</a>
+          </p>
+        </div>
+      </footer>
+    </div>
     <script src="{% static 'js/html2canvas.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
   </body>
