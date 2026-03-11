@@ -404,6 +404,9 @@ textarea {
         max-width: 400px;
         height: 450px;
         margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .card-content {
