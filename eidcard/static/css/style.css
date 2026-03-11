@@ -384,3 +384,73 @@ textarea {
     text-align: center;
     color: #e0f7fa;
 }
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .container-2 {
+        width: 100%;
+        height: auto;
+        min-height: 90vh;
+        margin-top: 20px;
+        padding: 15px;
+        background-size: cover;
+    }
+
+    .giftbox {
+        width: 100%;
+        height: 60vh;
+        font-size: 24px;
+        margin: 20px auto;
+    }
+
+    .card-content {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        padding: 20px;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+    }
+
+    .custom-file {
+        width: 100%;
+    }
+
+    #download-btn {
+        position: relative;
+        bottom: auto;
+        margin-top: 15px;
+    }
+
+    .h {
+        font-size: 1.5rem;
+    }
+
+    .hed {
+        font-size: 18px;
+    }
+
+    .mess {
+        font-size: 13px;
+    }
+
+}
